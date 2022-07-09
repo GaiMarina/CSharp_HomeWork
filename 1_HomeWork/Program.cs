@@ -47,7 +47,13 @@ Console.WriteLine(max);
 // Задача 6: Программа на вход принимает число и выдаёт, является ли число чётным (делится ли оно на 
 // два без остатка).
 
+Console.Write("Input an integer number ");
+int num = Convert.ToInt32(Console.ReadLine());
 
+if(num % 2 == 0)
+    Console.WriteLine(num + " is an even number.");
+else
+    Console.WriteLine(num + " is not an even number.");
 
 // Задача 8: Программа, которая на вход принимает число (N), а на выходе показывает все чётные числа 
 // от 1 до N.
