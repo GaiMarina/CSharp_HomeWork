@@ -9,7 +9,7 @@ num1 = Convert.ToInt32(Console.ReadLine());
 Console.Write("Input the second integer number ");
 num2 = Convert.ToInt32(Console.ReadLine());
 
-if(num1 == num2)
+while(num1 == num2)
 {
     Console.WriteLine("Error. Please, input two different integer numbers. Input the first integer number ");
     num1 = Convert.ToInt32(Console.ReadLine());
