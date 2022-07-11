@@ -63,15 +63,16 @@ else
 Console.Write("Input positive integer number: ");
 int num = Convert.ToInt32(Console.ReadLine());
 
-int current = 1;
+int current = 2;
 
-while(current <= num)
+while (num < 2)
 {
-    if(current % 2 == 0)
-    {
-        Console.Write(current + " ");
-        current = current + 2;   
-    }
-    else
-        current++;
+    Console.WriteLine("Error! Input a positive integer number greater than 1 ");
+    num = Convert.ToInt32(Console.ReadLine());
+}
+
+while (current <= num)
+{
+    Console.Write(current + " ");
+    current = current + 2;  
 }
