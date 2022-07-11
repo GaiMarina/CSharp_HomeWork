@@ -1,5 +1,5 @@
 ﻿
-
+/*
 // Задача 2. Программа принимает на вход два числа и выдает, какое число большее, а какое меньшее.
 
 int num1, num2;
@@ -21,10 +21,10 @@ if(num1 > num2)
     Console.Write(num1 + " больше " + num2 + " ");
 else
     Console.Write(num2 + " больше " + num1 + " ");
-
+*/
 
 // Задача 4: Программа принимает на вход три числа и выдаёт максимальное из этих чисел.
-/*
+
 int num1, num2, num3, max;
 
 Console.Write("Input the first integer number ");
@@ -41,8 +41,8 @@ else
 if(max < num3)
     max = num3;
 
-Console.WriteLine(max);
-*/
+Console.WriteLine("The maximum number is " + max );
+
 /*
 // Задача 6: Программа на вход принимает число и выдаёт, является ли число чётным (делится ли оно на 
 // два без остатка).
