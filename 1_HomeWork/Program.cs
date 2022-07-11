@@ -24,7 +24,7 @@ else
 */
 
 // Задача 4: Программа принимает на вход три числа и выдаёт максимальное из этих чисел.
-
+/*
 int num1, num2, num3, max;
 
 Console.Write("Input the first integer number ");
@@ -42,6 +42,7 @@ if(max < num3)
     max = num3;
 
 Console.WriteLine("The maximum number is " + max );
+*/
 
 /*
 // Задача 6: Программа на вход принимает число и выдаёт, является ли число чётным (делится ли оно на 
