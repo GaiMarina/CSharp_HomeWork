@@ -1,5 +1,5 @@
 ﻿
-/*
+
 // Задача 2. Программа принимает на вход два числа и выдает, какое число большее, а какое меньшее.
 
 int num1, num2;
@@ -18,10 +18,10 @@ if(num1 == num2)
 }
 
 if(num1 > num2)
-    Console.Write(num1 + " > " + num2 + " ");
+    Console.Write(num1 + " больше " + num2 + " ");
 else
-    Console.Write(num2 + " > " + num1 + " ");
-*/
+    Console.Write(num2 + " больше " + num1 + " ");
+
 
 // Задача 4: Программа принимает на вход три числа и выдаёт максимальное из этих чисел.
 /*
@@ -59,7 +59,7 @@ else
 
 // Задача 8: Программа, которая на вход принимает число (N), а на выходе показывает все чётные числа 
 // от 1 до N.
-
+/*
 Console.Write("Input positive integer number: ");
 int num = Convert.ToInt32(Console.ReadLine());
 
@@ -76,3 +76,4 @@ while (current <= num)
     Console.Write(current + " ");
     current = current + 2;  
 }
+*/
