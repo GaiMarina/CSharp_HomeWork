@@ -18,9 +18,10 @@ if(num1 == num2)
 }
 
 if(num1 > num2)
-    Console.Write(num1 + " больше " + num2 + " ");
+    Console.Write(num1 + " is greater than " + num2 + " ");
 else
-    Console.Write(num2 + " больше " + num1 + " ");
+    Console.Write(num2 + " is greater than " + num1 + " ");
+
 */
 
 // Задача 4: Программа принимает на вход три числа и выдаёт максимальное из этих чисел.
