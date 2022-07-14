@@ -27,7 +27,7 @@ int TheThirdDigit(int num)
     return d;
 }
 
-int ThirdDigitNumber(int n)
+int ThreeDigitNumber(int n)
 {
     while(n > 999)
     n /= 10;
@@ -38,7 +38,7 @@ int ThirdDigitNumber(int n)
 Console.Write("Input an integer number ");
 int number = Convert.ToInt32(Console.ReadLine());
 
-int tdn = ThirdDigitNumber(number);
+int tdn = ThreeDigitNumber(number);
 
 if(tdn > 99)
 {
@@ -47,12 +47,29 @@ if(tdn > 99)
 }
 else
     Console.WriteLine($"The third digit is missing.");
-    
 
-
-
-
-
+/*
 // Зад. 15: Программа принимает на вход цифру, обозначающую день недели, и проверяет, 
 // является ли этот день выходным.
 
+bool FindTheDayOff(int dig)
+{
+    if(dig == 6 || dig == 7) return true;
+    else return false;
+}
+
+void WriteResult(bool result)
+{
+    if(result) 
+    {
+        Console.WriteLine("This is a day off!");
+    }
+    else
+        Console.WriteLine("This is not a day off!");
+}
+
+Console.WriteLine("Input an ordinal number of the day of the week from 1 to 7: ");
+int number = Convert.ToInt32(Console.ReadLine());
+
+WriteResult(FindTheDayOff(number));
+*/
