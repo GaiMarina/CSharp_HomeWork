@@ -26,7 +26,30 @@ IfPalindrome(number);
 // Задача 21. Напишите программу, которая принимает на вход координаты двух точек и 
 // находит расстояние между ними в 3D пространстве.
 
+double Length(double xa, double ya, double za, double xb, double yb, double zb)
+{
+    double length = Math.Sqrt((xb - xa) * (xb - xa) + (yb - ya) * (yb - ya) + (zb - za) * (zb - za));
+    return length;
+}
 
+Console.WriteLine("Enter the x-coordinate of point A ");
+int xa = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter the y-coordinate of point A ");
+int ya = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter the z-coordinate of point A ");
+int za = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Enter the x-coordinate of point B ");
+int xb = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter the y-coordinate of point B ");
+int yb = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter the z-coordinate of point B ");
+int zb = Convert.ToInt32(Console.ReadLine());
+
+double result = Length(xa, ya, za, xb, yb, zb);
+Console.WriteLine($"The distance between two points A and B is {result}.");
+
+//======================
 
 // Задача 23. Напишите программу, которая принимает на вход число (N) и 
 // выдаёт таблицу кубов чисел от 1 до N.
