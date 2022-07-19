@@ -16,7 +16,7 @@ int digit = TheSecondDigit(number);
 
 Console.WriteLine($"The second digit is {digit}");
 */
-
+/*
 // Зад. 13: Программа выводит третью цифру заданного числа или сообщает, 
 // что третьей цифры нет.
 
@@ -47,8 +47,8 @@ if(tdn > 99)
 }
 else
     Console.WriteLine($"The third digit is missing.");
+*/
 
-/*
 // Зад. 15: Программа принимает на вход цифру, обозначающую день недели, и проверяет, 
 // является ли этот день выходным.
 
@@ -72,4 +72,3 @@ Console.WriteLine("Input an ordinal number of the day of the week from 1 to 7: "
 int number = Convert.ToInt32(Console.ReadLine());
 
 WriteResult(FindTheDayOff(number));
-*/
