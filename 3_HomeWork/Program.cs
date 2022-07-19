@@ -22,7 +22,7 @@ int number = Convert.ToInt32(Console.ReadLine());
 IfPalindrome(number);
 */
 //=====================
-
+/*
 // Задача 21. Напишите программу, которая принимает на вход координаты двух точек и 
 // находит расстояние между ними в 3D пространстве.
 
@@ -48,8 +48,29 @@ int zb = Convert.ToInt32(Console.ReadLine());
 
 double result = Length(xa, ya, za, xb, yb, zb);
 Console.WriteLine($"The distance between two points A and B is {result}.");
-
+*/
 //======================
 
 // Задача 23. Напишите программу, которая принимает на вход число (N) и 
 // выдаёт таблицу кубов чисел от 1 до N.
+
+void Cubes(double num)
+{
+    int current = 1;
+    while(current <= num)
+    {
+        Console.Write(current * current * current + " ");
+        current ++;
+    }
+}
+
+Console.Write("Input a positive integer number ");
+int numberN = Convert.ToInt32(Console.ReadLine());
+
+while(numberN < 1)
+    {
+    Console.Write("Uncorrect input! Try again here: ");
+    numberN = Convert.ToInt32(Console.ReadLine());
+    }
+
+Cubes(numberN);
