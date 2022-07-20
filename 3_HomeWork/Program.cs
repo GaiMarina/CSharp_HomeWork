@@ -50,7 +50,7 @@ double result = Length(xa, ya, za, xb, yb, zb);
 Console.WriteLine($"The distance between two points A and B is {result}.");
 */
 //======================
-
+/*
 // Задача 23. Напишите программу, которая принимает на вход число (N) и 
 // выдаёт таблицу кубов чисел от 1 до N.
 
@@ -74,3 +74,84 @@ while(numberN < 1)
     }
 
 Cubes(numberN);
+*/
+//=============================
+/*
+// Задача 19 через массив c проверкой и двумя методами.
+
+string IfPalindrome(string Number)
+{
+    string result = String.Empty;
+    
+    if(Number[0] == Number[4] && Number[1] == Number[3])
+        result = result + $"The number is a palindrome.";
+    else result = result + $"The number is not a palindrome.";
+    return result;
+}
+
+int IfFiveDigitNumber()
+{
+    
+    Console.Write("Please, input a positive five-digit integer number ");
+    int number = Convert.ToInt32(Console.ReadLine());
+    while(number <= 9999 || number > 99999)
+    {
+        Console.Write("Uncorrect input! Try again here: ");
+        number = Convert.ToInt32(Console.ReadLine());
+    }
+    return number;
+}    
+
+int N = IfFiveDigitNumber();
+
+string Result = Convert.ToString(N);
+
+string Final = IfPalindrome(Result);
+Console.WriteLine(Final);
+*/
+//=======================
+/*
+//Задача 19 без проверки через массив.
+
+string IfPalindrome(string Number)
+{
+    string result = String.Empty;
+    
+    if(Number[0] == Number[4] && Number[1] == Number[3])
+        result = result + $"The number is a palindrome.";
+    else result = result + $"The number is not a palindrome.";
+    return result;
+}
+Console.Write("Please, input a positive five-digit integer number ");
+string number = Convert.ToString(Convert.ToInt32(Console.ReadLine()));
+string result = IfPalindrome(number);
+Console.WriteLine(result);
+*/
+//===============================
+/*
+// Задача 19 через массив с проверкой и одним методом.
+
+string IfPalindrome(string Number)
+{
+    string result = String.Empty;
+    
+    if(Number[0] == Number[4] && Number[1] == Number[3])
+        result = result + $"The number is a palindrome.";
+    else result = result + $"The number is not a palindrome.";
+    return result;
+}
+
+Console.Write("Please, input a positive five-digit integer number ");
+int number = Convert.ToInt32(Console.ReadLine());
+
+while(number <= 9999 || number > 99999)
+{
+    Console.Write("Uncorrect input! Try again here: ");
+    number = Convert.ToInt32(Console.ReadLine());
+}
+
+string Result = Convert.ToString(number);
+
+string Final = IfPalindrome(Result);
+Console.WriteLine(Final);
+*/
