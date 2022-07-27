@@ -155,3 +155,25 @@ string Result = Convert.ToString(number);
 string Final = IfPalindrome(Result);
 Console.WriteLine(Final);
 */
+//=======================
+
+//Задача 19 через разворот массива с любым количеством введенных цифр.
+
+string ReverseOrder(string Number)
+{
+    string line = String.Empty;
+    int count = Number.Length - 1;
+
+    for(int i = count; i >= 0; i--)
+        line = line + $"{Number[i]}";
+    return line;
+}
+    
+Console.Write("Please, input a positive integer number ");
+string number = Convert.ToString(Convert.ToInt32(Console.ReadLine()));
+string temp = number;
+string result = ReverseOrder(number);
+if(result == temp)
+    Console.WriteLine("The number is a palindrome.");
+else
+    Console.WriteLine("The number is not a palindrome.");
