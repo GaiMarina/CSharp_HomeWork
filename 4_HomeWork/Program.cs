@@ -57,7 +57,7 @@ Console.WriteLine($"The sum of the digits in the number {Number} is {result}");
 
 int[] CreateRandomArray(int size)
 {
-    int[] newArray = new int[size];
+    int[] newArray = new int[size]; 
     for(int i = 0; i < size; i++)
         newArray[i] = new Random().Next();
         
@@ -70,6 +70,6 @@ void PrintArray(int[] array)
         Console.Write(array[i] + " ");
     Console.WriteLine();
 }
+
 int[] FinalArray = CreateRandomArray(8);
 PrintArray(FinalArray);
-
