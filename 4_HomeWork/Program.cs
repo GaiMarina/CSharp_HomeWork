@@ -28,7 +28,7 @@ while(num2 < 1)
 Console.WriteLine($" {num1} to the power of {num2} equals {Exponentiation(num1, num2)}");
 */
 //===================================
-
+/*
 //Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
 
 int SumOfDigits (int num)
@@ -50,16 +50,26 @@ if(number < 0) number = number *(-1);
 
 int result = SumOfDigits(number);
 Console.WriteLine($"The sum of the digits in the number {Number} is {result}");
-
-//452 -> 11
-
-//82 -> 10
-
-//9012 -> 12
+*/
 //====================================
+
 //Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
 
-//1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
+int[] CreateRandomArray(int size)
+{
+    int[] newArray = new int[size];
+    for(int i = 0; i < size; i++)
+        newArray[i] = new Random().Next();
+        
+    return newArray; 
+}   
 
-//6, 1, 33 -> [6, 1, 33]
+void PrintArray(int[] array)
+{
+    for(int i = 0; i < array.Length; i++)
+        Console.Write(array[i] + " ");
+    Console.WriteLine();
+}
+int[] FinalArray = CreateRandomArray(8);
+PrintArray(FinalArray);
 
