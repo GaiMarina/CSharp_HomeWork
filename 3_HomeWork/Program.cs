@@ -156,8 +156,8 @@ string Final = IfPalindrome(Result);
 Console.WriteLine(Final);
 */
 //=======================
-
-//Задача 19 через разворот массива с любым количеством введенных цифр.
+/*
+//Задача 19 через разворот массива с числом занимающим не более 32 бит.
 
 string ReverseOrder(string Number)
 {
@@ -177,3 +177,5 @@ if(result == temp)
     Console.WriteLine("The number is a palindrome.");
 else
     Console.WriteLine("The number is not a palindrome.");
+*/
+
