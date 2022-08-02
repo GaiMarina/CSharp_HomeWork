@@ -1,4 +1,4 @@
-﻿
+﻿/*
 //Задача 25: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную 
 //степень B.
 
@@ -26,9 +26,30 @@ while(num2 < 1)
 }
     
 Console.WriteLine($" {num1} to the power of {num2} equals {Exponentiation(num1, num2)}");
-
+*/
 //===================================
+
 //Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+
+int SumOfDigits (int num)
+{
+    int sum = 0;
+
+    while(num > 0)
+    {
+        sum += num % 10;  
+        num = num / 10;   
+    }
+    return sum;
+}
+
+Console.Write("Please, input an integer number: ");
+int number = Convert.ToInt32(Console.ReadLine());
+int Number = number;
+if(number < 0) number = number *(-1);
+
+int result = SumOfDigits(number);
+Console.WriteLine($"The sum of the digits in the number {Number} is {result}");
 
 //452 -> 11
 
