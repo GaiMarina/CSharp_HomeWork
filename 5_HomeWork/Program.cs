@@ -79,10 +79,9 @@ PrintArray(NewArray);
 Console.WriteLine($"The sum of elements with negative indexes is {SumOfOddElements(NewArray)}");
 */
 //==============================
-
+/*
 // Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементами массива.
-
-// [3 7 22 2 78] -> 76
+// 1 вариант.
 
 double[] RandomArray(int size)
 {
@@ -125,6 +124,53 @@ PrintArray(newArray);
 ArrangeItems(newArray);
 double diff = newArray[newArray.Length - 1] - newArray[0];
 Console.WriteLine($"The difference between minimum and maximum array values is {diff} ");
+*/
+//=================================
+
+// 2 вариант.
 
 
+double[] RandomArray(int size, int minValue, int maxValue)
+{
+    double[] Array = new double[size];
+        
+    for(int i = 0; i < size; i++)
+        Array[i] = new Random().Next(minValue,maxValue + 1);
+    
+    return Array;
+}
 
+void PrintArray(double[] array)
+{
+    for(int i = 0; i < array.Length; i++)
+        Console.Write(array[i] + " ");
+    Console.WriteLine();
+}
+
+double FindMinMaxDiff(double[] array)
+{   
+    int i = 0;
+    int j;
+    double min = array[i];
+    double max = array[i];
+
+    for(j = 1; j < array.Length; j++)
+    {              
+        if(min > array[j]) min = array[j];
+        if(max < array[j]) max = array[j];
+    }   
+    double diff = max - min;
+    return diff;
+}
+
+Console.Write("Input the size of an array: ");
+int size = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input the min value of an element: ");
+int min = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input the max value of an element: ");
+int max = Convert.ToInt32(Console.ReadLine());
+
+double[] newArray = RandomArray(size, min, max);
+PrintArray(newArray);
+
+Console.WriteLine($"The difference between minimum and maximum array values is {FindMinMaxDiff(newArray)} ");
