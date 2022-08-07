@@ -36,8 +36,9 @@ PrintArray(newArray);
 Console.WriteLine($"The quantity of positive numbers is {CountPositiveNumbers(newArray)}");
 */
 //=============================
-// Задача 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
 /*
+// Задача 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
+
 int[] CreateRandomArray(int size, int minValue, int maxValue)
 {
     int[] NewArray = new int[size];
@@ -79,7 +80,51 @@ Console.WriteLine($"The sum of elements with negative indexes is {SumOfOddElemen
 */
 //==============================
 
-// Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+// Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементами массива.
 
 // [3 7 22 2 78] -> 76
+
+double[] RandomArray(int size)
+{
+    double[] Array = new double[size];
+        
+    for(int i = 0; i < size; i++)
+        Array[i] = new Random().Next();
+    
+    return Array;
+}
+
+void PrintArray(double[] array)
+{
+    for(int i = 0; i < array.Length; i++)
+        Console.Write(array[i] + " ");
+    Console.WriteLine();
+}
+
+double[] ArrangeItems(double[] array)
+{   
+    for(int i = 0; i < array.Length - 1; i++)
+    {
+        int min = i;
+        
+        for(int j = i + 1; j < array.Length; j++)
+            if(array[j] < array[min]) min = j;
+          
+        double temporary = array[i]; 
+        array[i] = array[min];
+        array[min] = temporary;
+    }   
+    return array;
+}
+
+Console.Write("Input the size of an array: ");
+int size = Convert.ToInt32(Console.ReadLine());
+
+double[] newArray = RandomArray(size);
+PrintArray(newArray);
+ArrangeItems(newArray);
+double diff = newArray[newArray.Length - 1] - newArray[0];
+Console.WriteLine($"The difference between minimum and maximum array values is {diff} ");
+
+
 
