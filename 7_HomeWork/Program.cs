@@ -1,4 +1,6 @@
-﻿// Задача 47. Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
+﻿
+// Задача 47. Задайте двумерный массив размером m×n, заполненный случайными вещественными 
+//числами.
 
 //m = 3, n = 4.
 
@@ -20,8 +22,7 @@ double[,] CreateDouble2dArray(int rows, int columns, int minValue, int maxValue)
             newArray[i,j] = rand.Next(minValue, maxValue + 1) + rand.NextDouble();                   
         }
     }
-    // 
-    //(rand.NextDouble() * (maxValue - minValue +) + minValue);
+ 
     return newArray;
 }
 
@@ -36,7 +37,7 @@ double[,] CreateDouble2dArray(int rows, int columns, int minValue, int maxValue)
         Console.WriteLine();
     }
  }
-
+/*
 Console.Write("Input the number of rows ");
 int r = Convert.ToInt32(Console.ReadLine());
 Console.Write("Input the number of columns ");
@@ -49,7 +50,7 @@ int max = Convert.ToInt32(Console.ReadLine());
 
 double[,] FinalArray = CreateDouble2dArray(r, col, min, max);
 Show2dArray(FinalArray);
-
+*/
 //=================================
 
 // Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, 
@@ -63,8 +64,70 @@ Show2dArray(FinalArray);
 
 8 4 2 4
 
-17 -> такого числа в массиве нет
+1,7 -> такого числа в массиве нет
 */
+double[,] CreateDouble2dArray(int rows, int columns)
+{
+    double[,] newArray = new double[rows,columns];
+    Random rand = new Random();
+
+    for(int i = 0; i < rows; i++)
+    {
+        for(int j = 0; j < columns; j++)
+        {   
+            newArray[i,j] = rand.Next() + rand.NextDouble();                   
+        }
+    }
+ 
+    return newArray;
+}
+
+ void Show2dArray(double[,] array)
+ {
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i,j] + " ");
+        }
+        Console.WriteLine();
+    }
+ }
+
+string FindElementValue(int row, int column, double[,] array)
+{
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            if(i = row; && j = column)
+        }
+        
+    }
+}
+
+
+Console.Write("Input the number of rows ");
+int r = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input the number of columns ");
+int col = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Input the number of row to find ");
+int r = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Input the number of column to find ");
+int col = Convert.ToInt32(Console.ReadLine());
+
+double[,] FinalArray = CreateDouble2dArray(r, col, min, max);
+Show2dArray(FinalArray);
+
+Console.WriteLine("Input the number of row to find ");
+int r = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Input the number of column to find ");
+int col = Convert.ToInt32(Console.ReadLine());
+
+
 //=================================
 
 // Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.

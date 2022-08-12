@@ -23,7 +23,7 @@ int M = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine($"The quantity of numbers greater than zero is {GreaterThanZero(M)}");
 */
 //=======================================
-
+/*
 // Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых, заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; 
 // значения b1, k1, b2 и k2 задаются пользователем.
 
@@ -54,6 +54,33 @@ Console.Write($"Input the first value b2: ");
 double d = Convert.ToDouble(Console.ReadLine());
 
 IntersectionPoint(a, b, c, d);
+*/
 
+//Если точка M, является точкой пересечения двух прямых, то она должна принадлежать 
+//этим прямым, а ее координаты удовлетворять уравнениям этих прямых.
+//==============================
+// Задача 43. С проверкой на параллельность и совпадение отрезков.
 
-//Если точка M, является точкой пересечения двух прямых, то она должна принадлежать этим прямым, а ее координаты удовлетворять уравнениям этих прямых.
+Console.Write("Input the coefficient b1 "); 
+ double b1 = Convert.ToInt32(Console.ReadLine()); 
+  
+ Console.Write("Input the coefficient k1 "); 
+ double k1 = Convert.ToInt32(Console.ReadLine()); 
+  
+ Console.Write("Input the coefficient b2 "); 
+ double b2 = Convert.ToInt32(Console.ReadLine()); 
+  
+ Console.Write("Input the coefficient k2 "); 
+ double k2 = Convert.ToInt32(Console.ReadLine()); 
+  
+ if (k1 != k2) 
+ { 
+     double x = ((b2 - b1) / (k1 - k2)); 
+     double y = k1 * x + b1; 
+     Console.WriteLine($"Point of intersection of straight lines (X = {x}, Y = {y})"); 
+ } 
+ else 
+ { 
+     if (k1 == k2 && b1 != b2) Console.WriteLine("Straight lines are parallel!"); 
+     if (k1 == k2 && b1 == b2) Console.WriteLine("Straight lines match!"); 
+ }
