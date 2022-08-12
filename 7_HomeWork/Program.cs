@@ -44,7 +44,7 @@ double[,] FinalArray = CreateDouble2dArray(r, col, min, max);
 Show2dArray(FinalArray);
 */
 //=================================
-
+/*
 // Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, 
 // и возвращает значение этого элемента или же указание, что такого элемента нет.
 
@@ -93,21 +93,76 @@ int hor = Convert.ToInt32(Console.ReadLine());
 
 Console.Write("Input the number of column to find ");
 int vert = Convert.ToInt32(Console.ReadLine());
+
 Console.WriteLine();
 
 int[,] newArray = CreateRandom2dArray(r, col);
 Show2dArray(newArray);
 Console.WriteLine();
 FindElementValue(newArray, hor, vert);
-
+*/
 //=================================
 
 // Задача 52. Задайте двумерный массив из целых чисел. 
-//Найдите среднее арифметическое элементов в каждом столбце.
+// Найдите среднее арифметическое элементов в каждом столбце.
 /*Например, задан массив:
 1 4 7 2
 5 9 2 3
 8 4 2 4
 Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.*/
 
+int[,] CreateRandom2dArray(int rows, int columns) 
+{
+    int[,] newArray = new int[rows,columns];
 
+    for(int i = 0; i < rows; i++)
+    {
+        for(int j = 0; j < columns; j++)
+        {
+            newArray[i,j] = new Random().Next(1,10);
+        }
+    }
+    
+    return newArray;
+}
+
+void Show2dArray(int[,] array)
+ {
+    for(int i = 0; i < array.GetLength(0); i++) 
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i,j] + " ");
+        }
+        Console.WriteLine();
+    }
+ }
+
+void ArithmeticalMean(int[,] array)
+{          
+    for(int j = 0; j < array.GetLength(1); j++)
+    {   
+        double sum = 0;
+        double count = 0;
+        
+        for(int i = 0; i < array.GetLength(0); i++)
+        {
+            sum += array[i,j];
+            count++;            
+        }
+        Console.Write(sum / count + "; ");
+    }    
+}
+
+Console.Write("Input the quantity of rows ");
+int r = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input the quantity of columns ");
+int col = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine();
+
+int[,] newArray = CreateRandom2dArray(r, col);
+Show2dArray(newArray);
+Console.WriteLine();
+
+ArithmeticalMean(newArray);
+Console.WriteLine();
