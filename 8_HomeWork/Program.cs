@@ -261,7 +261,7 @@ Console.Write("Input the quantity of rows ");
 int r = Convert.ToInt32(Console.ReadLine());
 Console.Write("Input the quantity of columns ");
 int col = Convert.ToInt32(Console.ReadLine());
-Console.Write("Input the quantity of rows ");
+Console.Write("Input the quantity of layers ");
 int m = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine();
 
@@ -269,7 +269,7 @@ int[,,] threeDArray = VariousDigits3dArray(r, col, m);
 Show3DArrayAndIndex(threeDArray);
 */
 //================================
-
+/*
 // Задача 62. Заполните спирально массив 4 на 4.
 
 void PrintSpiral(int[,] spiral) 
@@ -294,26 +294,25 @@ void FulfillSpiral(int rows, int columns)
     
     for(int k = 0; k < (rows + 1) / 2; k++)
     {
+        for(j += 1; j < columns-k; j++) //1
+            if(spiral[i, j] == 0)
+                spiral[i,j] = spiral[i,j - 1] + 1;
+        j--;
+    
+        for(i += 1; i < rows-k; i++)  //2
+            if(spiral[i, j] == 0)
+                spiral[i,j] = spiral[i - 1,j] + 1;
+        i--;
+    
+        for(j -= 1; j > k-1; j--)  //3
+            if(spiral[i, j] == 0)
+                spiral[i,j] = spiral[i,j + 1] + 1;
+        j++;
 
-    for(j += 1; j < columns-k; j++) //1
-        if(spiral[i, j] == 0)
-            spiral[i,j] = spiral[i,j - 1] + 1;
-    j--;
- 
-    for(i += 1; i < rows-k; i++)  //2
-        if(spiral[i, j] == 0)
-            spiral[i,j] = spiral[i - 1,j] + 1;
-    i--;
- 
-    for(j -= 1; j > k-1; j--)  //3
-        if(spiral[i, j] == 0)
-             spiral[i,j] = spiral[i,j + 1] + 1;
-    j++;
-
-    for(i -= 1; i > k; i--)  //4
-        if(spiral[i, j] == 0)
-            spiral[i,j] = spiral[i + 1,j] + 1;
-    i++;
+        for(i -= 1; i > k; i--)  //4
+            if(spiral[i, j] == 0)
+                spiral[i,j] = spiral[i + 1,j] + 1;
+        i++;
     }
 }
 
@@ -324,3 +323,4 @@ int col = r;
 spiral = new int[r,col];
 FulfillSpiral(r, col);
 PrintSpiral(spiral);
+*/
