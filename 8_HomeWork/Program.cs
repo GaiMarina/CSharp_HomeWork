@@ -143,7 +143,7 @@ Console.WriteLine();
 Console.WriteLine($"The {TheSmallestRowSum(array)} line.");
 */
 //=================================
-
+/*
 // Задача 58: Задайте две матрицы. Напишите программу, которая будет находить 
 //            произведение двух матриц.
 
@@ -214,19 +214,59 @@ Console.WriteLine();
 
 Show2dArray(MatrixProduct(theFirstMatrix, theSecondMatrix));
 Console.WriteLine();
-
+*/
 //================================
 
 // Задача 60. Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. 
 // Напишите программу, которая будет построчно выводить массив, 
 // добавляя индексы каждого элемента.
-/*
-массив размером 2 x 2 x 2
 
-12(0,0,0) 22(0,0,1)
+int[,,] VariousDigits3dArray(int rows, int columns, int layers)
+{
+    int[,,] array = new int[rows, columns, layers]; 
+    array[0,0,0] = 9;
+    int temp = array[0,0,0];
+   
+    for(int i = 0; i < rows; i++)
+    {   
+        for(int j = 0; j < columns; j++)
+        {
+            for(int m = 0; m < layers; m++)
+            {   
+                array[i,j,m] = temp + 1;
+                temp = array[i,j,m];
+            }
+        }
+    }
+    return array;
+}
 
-45(1,0,0) 53(1,0,1)
-*/
+void Show3DArrayAndIndex(int[,,] array)
+{
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+        {
+            for(int m = 0; m < array.GetLength(2); m++)
+            {
+                Console.Write($"{array[i,j,m]}({i},{j},{m}) ");                
+            }
+            Console.WriteLine();
+        }
+
+    }
+}
+
+Console.Write("Input the quantity of rows ");
+int r = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input the quantity of columns ");
+int col = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input the quantity of rows ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine();
+
+int[,,] threeDArray = VariousDigits3dArray(r, col, m);
+Show3DArrayAndIndex(threeDArray);
 
 //================================
 
