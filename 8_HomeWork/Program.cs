@@ -294,22 +294,22 @@ void FulfillSpiral(int rows, int columns)
     
     for(int k = 0; k < (rows + 1) / 2; k++)
     {
-        for(j += 1; j < columns-k; j++) //1
+        for(j += 1; j < columns - k; j++) 
             if(spiral[i, j] == 0)
                 spiral[i,j] = spiral[i,j - 1] + 1;
         j--;
     
-        for(i += 1; i < rows-k; i++)  //2
+        for(i += 1; i < rows - k; i++)  
             if(spiral[i, j] == 0)
                 spiral[i,j] = spiral[i - 1,j] + 1;
         i--;
     
-        for(j -= 1; j > k-1; j--)  //3
+        for(j -= 1; j > k - 1; j--)  
             if(spiral[i, j] == 0)
                 spiral[i,j] = spiral[i,j + 1] + 1;
         j++;
 
-        for(i -= 1; i > k; i--)  //4
+        for(i -= 1; i > k; i--)  
             if(spiral[i, j] == 0)
                 spiral[i,j] = spiral[i + 1,j] + 1;
         i++;
