@@ -216,7 +216,7 @@ Show2dArray(MatrixProduct(theFirstMatrix, theSecondMatrix));
 Console.WriteLine();
 */
 //================================
-
+/*
 // Задача 60. Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. 
 // Напишите программу, которая будет построчно выводить массив, 
 // добавляя индексы каждого элемента.
@@ -267,19 +267,60 @@ Console.WriteLine();
 
 int[,,] threeDArray = VariousDigits3dArray(r, col, m);
 Show3DArrayAndIndex(threeDArray);
-
+*/
 //================================
 
 // Задача 62. Заполните спирально массив 4 на 4.
-/*
-Например, на выходе получается вот такой массив:
 
-1 2 3 4
+void PrintSpiral(int[,] spiral) 
+{
+   for(int i = 0; i < spiral.GetLength(0); i++) 
+    {
+        for(int j = 0; j < spiral.GetLength(1); j++)
+        {
+            Console.Write($"{spiral[i,j]} ");            
+        }
+        Console.WriteLine();
+    }
+}
 
-12 13 14 5
+int[,] spiral;
 
-11 16 15 6
+void FulfillSpiral(int rows, int columns)
+{       
+    spiral[0,0] = 1;
+    int j = 0;
+    int i = 0;
+    
+    for(int k = 0; k < (rows + 1) / 2; k++)
+    {
 
-10 9 8 7
-*/
+    for(j += 1; j < columns-k; j++) //1
+        if(spiral[i, j] == 0)
+            spiral[i,j] = spiral[i,j - 1] + 1;
+    j--;
+ 
+    for(i += 1; i < rows-k; i++)  //2
+        if(spiral[i, j] == 0)
+            spiral[i,j] = spiral[i - 1,j] + 1;
+    i--;
+ 
+    for(j -= 1; j > k-1; j--)  //3
+        if(spiral[i, j] == 0)
+             spiral[i,j] = spiral[i,j + 1] + 1;
+    j++;
 
+    for(i -= 1; i > k; i--)  //4
+        if(spiral[i, j] == 0)
+            spiral[i,j] = spiral[i + 1,j] + 1;
+    i++;
+    }
+}
+
+Console.Write("Input the quantity for rows and columns of the spiral ");
+int r = Convert.ToInt32(Console.ReadLine());
+int col = r;
+
+spiral = new int[r,col];
+FulfillSpiral(r, col);
+PrintSpiral(spiral);
