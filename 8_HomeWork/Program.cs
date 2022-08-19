@@ -18,7 +18,7 @@ int[,] CreateRandom2dArray(int rows, int columns, int minValue, int maxValue)
 }
 
 void Show2dArray(int[,] array)
- {
+{
     for(int i = 0; i < array.GetLength(0); i++)
     {
         for(int j = 0; j < array.GetLength(1); j++)
@@ -27,7 +27,8 @@ void Show2dArray(int[,] array)
         }
         Console.WriteLine();
     }
- }
+}
+
 
 int[,] RowDescending(int[,] array)
 {   
@@ -65,7 +66,7 @@ Console.WriteLine();
 Show2dArray(RowDescending(array));
 */
 //==============================================
-
+/*
 //Задача 56: Задать прямоугольный двумерный массив. Написать программу, 
 //           которая будет находить строку с наименьшей суммой элементов.
 // Программа считает сумму элементов в каждой строке и выдаёт 
@@ -87,7 +88,7 @@ int[,] CreateRandom2dArray(int rows, int columns, int minValue, int maxValue)
 }
 
 void Show2dArray(int[,] array)
- {
+{
     for(int i = 0; i < array.GetLength(0); i++)
     {
         for(int j = 0; j < array.GetLength(1); j++)
@@ -96,7 +97,7 @@ void Show2dArray(int[,] array)
         }
         Console.WriteLine();
     }
- }
+}
 
 // Строки в ответ вывожу считая с 1, а не с нуля как в случае с индексом.
 
@@ -140,41 +141,80 @@ Show2dArray(array);
 Console.WriteLine();
 
 Console.WriteLine($"The {TheSmallestRowSum(array)} line.");
-
+*/
 //=================================
 
-// Задача 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
-/*
-Например, заданы 2 массива:
+// Задача 58: Задайте две матрицы. Напишите программу, которая будет находить 
+//            произведение двух матриц.
 
-1 4 7 2
+int[,] CreateRandom2dArray(int rows, int columns, int minValue, int maxValue)
+{
+    int[,] newArray = new int[rows,columns];
 
-5 9 2 3
+    for(int i = 0; i < rows; i++)
+    {
+        for(int j = 0; j < columns; j++)
+        {
+            newArray[i,j] = new Random().Next(minValue, maxValue + 1);
+        }
+    }
+    
+    return newArray;
+}
 
-8 4 2 4
+void Show2dArray(int[,] array)
+{
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i,j] + " ");
+        }
+        Console.WriteLine();
+    }
+}
 
-5 2 6 7
+int[,] MatrixProduct(int[,] array, int[,] matrix)
+{
+    int[,] mProduct = new int[array.GetLength(0), array.GetLength(1)];
 
-и
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+        {
+            mProduct[i,j] = array[i,j] * matrix[i,j];
+        }
+    }
+    return mProduct;
+}
 
-1 5 8 5
+Console.Write("Input the quantity of rows for both of the matrices ");
+int r = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input the quantity of columns for both of the matrices ");
+int col = Convert.ToInt32(Console.ReadLine());
 
-4 9 4 2
+Console.Write("Input the min value of the elements for the first matrix ");
+int min = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input the max value of the elements for the first matrix ");
+int max = Convert.ToInt32(Console.ReadLine());
 
-7 2 2 6
+Console.Write("Input the min value of the elements for the second matrix ");
+int from = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input the max value of the elements for the second matrix ");
+int to = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine();
 
-2 3 4 7
+int[,] theFirstMatrix = CreateRandom2dArray(r, col, min, max);
+Show2dArray(theFirstMatrix);
+Console.WriteLine();
 
-Их произведение будет равно следующему массиву:
+int[,] theSecondMatrix = CreateRandom2dArray(r, col, from, to);
+Show2dArray(theSecondMatrix);
+Console.WriteLine();
 
-1 20 56 10
+Show2dArray(MatrixProduct(theFirstMatrix, theSecondMatrix));
+Console.WriteLine();
 
-20 81 8 6
-
-56 8 4 24
-
-10 6 24 49
-*/
 //================================
 
 // Задача 60. Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. 
