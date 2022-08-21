@@ -253,7 +253,6 @@ void Show3DArrayAndIndex(int[,,] array)
             }
             Console.WriteLine();
         }
-
     }
 }
 
