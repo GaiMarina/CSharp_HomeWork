@@ -73,16 +73,16 @@ Console.WriteLine(NaturalSumRec(m,n));
 
 //m = 2, n = 3 -> A(m,n) = 29
 
-double AckermanFun(double m, double n)
+int AckermanFun(int m, int n)
 {
     if(m == 0) return n + 1;
     if(m > 0 && n == 0) return AckermanFun(m - 1, 1);
-    else return AckermanFun (m - 1, AckermanFun(m, n - 1));
+    else return AckermanFun(m - 1, AckermanFun(m, n - 1));
 }
 
 Console.Write("Input the positive number m: ");
-double m = Convert.ToInt32(Console.ReadLine());
+int m = Convert.ToInt32(Console.ReadLine());
 Console.Write("Input the positive number n: ");
-double n = Convert.ToInt32(Console.ReadLine());
+int n = Convert.ToInt32(Console.ReadLine());
 
 Console.WriteLine(AckermanFun(m,n));
