@@ -88,4 +88,4 @@ int m = Convert.ToInt32(Console.ReadLine());
 Console.Write("Input the positive number n: ");
 int n = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine(AckermanFun(m,n));
+Console.WriteLine(AckermanFun(n,m));
